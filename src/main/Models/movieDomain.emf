@@ -1,0 +1,54 @@
+@namespace(uri="http://org.rs.domain.movie", prefix="domainMovie")
+package domainMovie;
+ 
+import "http://org.rs";
+
+class MovieDomain {
+	val Viewer[*] Viewer;
+	val Series[+] series;
+	attr String name;
+	val Movie[*] movies;
+	val ShowCategory[*] categories;
+}
+
+abstract class Show extends rs.Item {
+	attr int pg;
+	ref ShowCategory category; 
+}
+
+class ShowCategory extends rs.Preference{ 
+	attr Category category;
+}
+
+class Movie extends Show {
+	attr String name;
+	attr int length;
+}
+
+class Series extends Show {
+	attr String name;
+	attr int seasons;
+	attr int length;
+}
+
+class ViewerPreference extends rs.Preference {
+	
+}
+
+class ViewerProfile extends rs.Profile{
+	attr int age;
+}
+
+class Viewer extends rs.User {
+	attr String name;
+	val ViewerPreference[1] viewerPreference;
+	val ViewerProfile[1] viewerProfile;
+}
+
+enum Category {
+	ACTION = 0;
+	DRAMA = 1;
+	COMEDY = 2;
+	DOCUMENTARY = 3;
+	HORROR = 4;
+}
