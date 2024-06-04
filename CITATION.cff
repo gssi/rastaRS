@@ -13,7 +13,7 @@ authors:
 - family-names: "Iovino"
   given-names: "Ludovico"
   orcid: "https://orcid.org/0000-0001-6552-2609"
-title: "Towards the automated generation and configuration of domain-specific recommender systems"
+title: "Towards the automated generation and configuration of domain-specific recommender systems - Replication Package"
 version: 1.0.0
 date-released: 2024-06-03
 url: "https://github.com/gssi/rastaRS"
